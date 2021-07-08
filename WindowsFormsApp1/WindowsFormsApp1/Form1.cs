@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
      * @author: Chenglin Song
      * “找相同”小游戏（匹配小游戏）
      * 程序设计思路：
-     * 利用website字体生成图片，创建窗体，分出16个单元格，对每个单元格都定义click事件，定义计时器，
+     * 利用Webdings字体生成图片，创建窗体，分出16个单元格，对每个单元格都定义click事件，定义计时器，
      * 如果两图标不匹配，则令图标消失，否则图标不消失。当所有图标都存在时（匹配），计时器停止。
      * 判断机制是：事先定义图标的颜色，通过检查每个图标的文本颜色与背景颜色是否相同来检查每个图标看是否匹配。
      * 找不到匹配的图标了，则玩家获胜。
@@ -24,8 +24,8 @@ namespace WindowsFormsApp1
         //计时器
         int time = 0;
 
-        //添加图标（利用website字体生成图标，每个字母对应一个图标）
         Random random = new Random();
+        //添加图标（利用Webding字体生成图标，每个字母对应一个图标）
         List<string> icons = new List<string>
         {
             "a","a","h","h","u","u","w","w",
@@ -36,6 +36,10 @@ namespace WindowsFormsApp1
         Label firstClicked = null;//指向第一个Label控件
         Label secondClicked = null;//指向第二个Label控件
 
+        /**
+         * 匹配小游戏()函数：
+         * 用于调用设计器所需的函数，显示图标的函数以及开启全局计时的函数。
+         */
         public 匹配小游戏()
         {
             InitializeComponent();
@@ -48,7 +52,10 @@ namespace WindowsFormsApp1
 
         }
 
-        //分配随机图标给label控件
+        /**
+         * giveIcon()函数：
+         * 用于随机分配图标的函数。
+         */
         private void giveIcon()
         {
             foreach (Control control in tableLayoutPanel1.Controls)
@@ -64,11 +71,19 @@ namespace WindowsFormsApp1
             }
         }
 
+        /**
+         * 匹配小游戏_Load(object sender, EventArgs e)函数：
+         * 用于窗体命名。
+         */
         private void 匹配小游戏_Load(object sender, EventArgs e)
         {
             this.Text = "找相同";
         }
 
+        /**
+         * label_Click()函数：
+         * 
+         */
         private void label_Click(object sender, EventArgs e)
         {
 
