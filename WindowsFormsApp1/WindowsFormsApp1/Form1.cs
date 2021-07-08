@@ -1,11 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -99,16 +94,16 @@ namespace WindowsFormsApp1
 
             Label clickedLabel = sender as Label;//定义专门的label控件
 
-            if (clickedLabel != null)
+            if (clickedLabel != null)//点击事件发生
             {
-                if (clickedLabel.ForeColor == Color.Black)
+                if (clickedLabel.ForeColor == Color.Black)//图标判断颜色为黑色
                     return;
                 
                 //clickedLabel.ForeColor = Color.Black;
                 if (firstClicked == null)
                 {
                     firstClicked = clickedLabel;
-                    firstClicked.ForeColor = Color.Black;
+                    firstClicked.ForeColor = Color.Black;//第一次点击的图标变成黑色
                     return;
                 }
 
@@ -175,6 +170,7 @@ namespace WindowsFormsApp1
                 Label iconLabel = control as Label;
                 if (iconLabel != null)
                 {
+                    //检查每个图标与其背景颜色是否匹配
                     if (iconLabel.ForeColor == iconLabel.BackColor)
                         return;
                 }
