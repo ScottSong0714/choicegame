@@ -7,14 +7,14 @@ namespace WindowsFormsApp1
 {
     /**
      * @author: Chenglin Song
-     * “找相同”小游戏（匹配小游戏）
+     * “找相同”小游戏（choiceGame）
      * 程序设计思路：
      * 利用Webdings字体生成图片，创建窗体，分出16个单元格，对每个单元格都定义click事件，定义计时器，
      * 如果两图标不匹配，则令图标消失，否则图标不消失。当所有图标都存在时（匹配），计时器停止。
      * 判断机制是：事先定义图标的颜色，通过检查每个图标的文本颜色与背景颜色是否相同来检查每个图标看是否匹配。
      * 找不到匹配的图标了，则玩家获胜。
      */
-    public partial class 匹配小游戏 : Form
+    public partial class choiceGame : Form
     {
         //全局计时器
         DateTime TimeNow = new DateTime();
@@ -33,10 +33,11 @@ namespace WindowsFormsApp1
         Label secondClicked = null;//指向第二个Label控件
 
         /**
-         * 匹配小游戏()函数：
+         * choiceGame()函数：
          * 用于调用设计器所需的函数，显示图标的函数以及开启全局计时的函数。
          */
-        public 匹配小游戏()
+        
+        public choiceGame()
         {
             InitializeComponent();
             giveIcon();//若显示图标，调用方法giveIcon()
@@ -71,10 +72,10 @@ namespace WindowsFormsApp1
         }
 
         /**
-         * 匹配小游戏_Load(object sender, EventArgs e)函数：
+         * choiceGame_Load(object sender, EventArgs e)函数：
          * 用于窗体命名。
          */
-        private void 匹配小游戏_Load(object sender, EventArgs e)
+        private void choiceGame_Load(object sender, EventArgs e)
         {
             this.Text = "找相同";
             this.timer3.Interval = 1000;
